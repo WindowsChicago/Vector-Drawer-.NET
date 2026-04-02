@@ -80,6 +80,7 @@ namespace Drawer
             this.另存为ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.颜色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.字体ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.使用教程ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,11 +91,11 @@ namespace Drawer
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripSplitButton();
             this.清除画布ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.clockTimer = new System.Windows.Forms.Timer(this.components);
-            this.timeLabel = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -111,10 +112,11 @@ namespace Drawer
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件ToolStripMenuItem,
             this.颜色ToolStripMenuItem,
+            this.字体ToolStripMenuItem,
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1685, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1682, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -127,8 +129,8 @@ namespace Drawer
             this.另存为ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(60, 28);
-            this.文件ToolStripMenuItem.Text = "文件";
+            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(82, 28);
+            this.文件ToolStripMenuItem.Text = "文件(&F)";
             // 
             // 新建ToolStripMenuItem
             // 
@@ -173,9 +175,16 @@ namespace Drawer
             // 颜色ToolStripMenuItem
             // 
             this.颜色ToolStripMenuItem.Name = "颜色ToolStripMenuItem";
-            this.颜色ToolStripMenuItem.Size = new System.Drawing.Size(60, 28);
-            this.颜色ToolStripMenuItem.Text = "颜色";
+            this.颜色ToolStripMenuItem.Size = new System.Drawing.Size(84, 28);
+            this.颜色ToolStripMenuItem.Text = "颜色(&C)";
             this.颜色ToolStripMenuItem.Click += new System.EventHandler(this.颜色ToolStripMenuItem_Click);
+            // 
+            // 字体ToolStripMenuItem
+            // 
+            this.字体ToolStripMenuItem.Name = "字体ToolStripMenuItem";
+            this.字体ToolStripMenuItem.Size = new System.Drawing.Size(82, 28);
+            this.字体ToolStripMenuItem.Text = "字体(&T)";
+            this.字体ToolStripMenuItem.Click += new System.EventHandler(this.字体ToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 
@@ -183,8 +192,8 @@ namespace Drawer
             this.使用教程ToolStripMenuItem,
             this.关于ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(60, 28);
-            this.帮助ToolStripMenuItem.Text = "帮助";
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(86, 28);
+            this.帮助ToolStripMenuItem.Text = "帮助(&H)";
             // 
             // 使用教程ToolStripMenuItem
             // 
@@ -215,10 +224,11 @@ namespace Drawer
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripButton5,
+            this.toolStripButton8,
             this.toolStripButton6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 32);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1685, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1682, 31);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -242,11 +252,12 @@ namespace Drawer
             // 
             // toolStripButton7
             // 
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.Image = global::Drawer.Properties.Resources.sline;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(70, 28);
             this.toolStripButton7.Text = "折线";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // toolStripButton3
             // 
@@ -275,6 +286,15 @@ namespace Drawer
             this.toolStripButton5.Text = "文字";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.Image = global::Drawer.Properties.Resources.polygon;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(88, 28);
+            this.toolStripButton8.Text = "多边形";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+            // 
             // toolStripButton6
             // 
             this.toolStripButton6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -292,17 +312,6 @@ namespace Drawer
             this.清除画布ToolStripMenuItem.Size = new System.Drawing.Size(166, 28);
             this.清除画布ToolStripMenuItem.Text = "清除画布";
             this.清除画布ToolStripMenuItem.Click += new System.EventHandler(this.清除画布ToolStripMenuItem_Click);
-            // 
-            // timeLabel
-            // 
-            this.timeLabel.AutoSize = true;
-            this.timeLabel.Enabled = false;
-            this.timeLabel.Location = new System.Drawing.Point(1034, 815);
-            this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(55, 15);
-            this.timeLabel.TabIndex = 5;
-            this.timeLabel.Text = "label1";
-            this.timeLabel.Visible = false;
             // 
             // trackBar1
             // 
@@ -336,10 +345,9 @@ namespace Drawer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 852);
+            this.ClientSize = new System.Drawing.Size(1682, 853);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -349,7 +357,6 @@ namespace Drawer
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vector Drawer";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
@@ -384,11 +391,13 @@ namespace Drawer
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Timer clockTimer;
-        private Label timeLabel;
         private TrackBar trackBar1;
         private Label label1;
+        private Label timeLabel;
         private ToolStripSplitButton toolStripButton6;
         private ToolStripMenuItem 清除画布ToolStripMenuItem;
         private ToolStripButton toolStripButton7;
+        private ToolStripMenuItem 字体ToolStripMenuItem;
+        private ToolStripButton toolStripButton8;
     }
 }

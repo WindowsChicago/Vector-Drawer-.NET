@@ -55,6 +55,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,14 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,31 +115,13 @@
     <None Include="Resources\Ellipse.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\rubber.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\saver.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\resaver.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\rubber1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\saver1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\saver2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\resaver1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\resaver2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\abc.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\abc1.png" />
@@ -160,10 +142,13 @@
     <None Include="Resources\net.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\exit.png" />
+    <None Include="Resources\exit2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\exit2.png" />
+    <None Include="Resources\sline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\polygon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

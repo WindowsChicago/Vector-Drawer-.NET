@@ -25,8 +25,6 @@ namespace Drawer
             {
                 timer1.Enabled = false;
                 this.Hide(); // 隐藏当前开始界面    
-               // MainForm mainForm = new MainForm(); // 创建主界面实例 
-               // mainForm.Show(); // 显示主界面 
                LoginForm loginForm = new LoginForm(); // 创建登录界面实例 
                loginForm.ShowDialog(); // 显示登录界面 
                 this.Close(); // 关闭当前窗体
