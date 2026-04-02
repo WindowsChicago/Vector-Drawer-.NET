@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Imaging;
+using System.Net;
+using System.Threading.Tasks;
+
 
 namespace Drawer
 {
@@ -15,8 +19,6 @@ namespace Drawer
         public LoginForm()
         {
             InitializeComponent();
-            //MainForm mainForm = new MainForm(); // 创建主界面实例 
-            //mainForm.Show(); // 显示主界面
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,8 +29,6 @@ namespace Drawer
             if (lines.Contains(username + " " + password)) 
             { 
               this.Hide(); // 隐藏当前窗体 
-            MainForm mainForm = new MainForm(); // 创建主界面实例 
-            mainForm.Show(); // 显示主界面
               this.Close(); // 关闭当前窗体
             } 
             else 
@@ -43,5 +43,16 @@ namespace Drawer
            
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textPassWD.PasswordChar = char.MinValue;
+            }
+            else
+            {
+                textPassWD.PasswordChar = '*';
+            }
+        }
     }
 }
