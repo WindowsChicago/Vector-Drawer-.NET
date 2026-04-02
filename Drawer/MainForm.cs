@@ -359,6 +359,10 @@ namespace Drawer
                 if (ext == ".wmf")
                 {
                     LoadWmfFile(OpenDialog.FileName);
+                    toolStrip1.Visible = true;
+                    toolStrip1.Enabled = true;
+                    trackBar1.Visible = true;
+                    label1.Visible = true;
                 }
                 else
                 {
@@ -372,7 +376,10 @@ namespace Drawer
                     ig.DrawImage(newImage, this.ClientRectangle);
                     toolStrip1.Visible = true;
                     toolStrip1.Enabled = true;
+                    trackBar1.Visible = true;
+                    label1.Visible = true;
                 }
+                ForceRedraw();
             }
         }
         private void LoadWmfFile(string filePath)
