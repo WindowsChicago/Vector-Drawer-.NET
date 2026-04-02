@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
+
 namespace Drawer
 {
     partial class MainForm
@@ -23,44 +24,7 @@ namespace Drawer
             }
             base.Dispose(disposing);
         }
-        private void InitializeClock()
-        {
-            timeLabel = new Label
-            {
-                AutoSize = true,
-                ForeColor = Color.DarkBlue,
-                Font = new Font("Consolas", 12F, FontStyle.Bold),
-                BackColor = Color.Transparent
-            };
-            timeLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            // 初始位置
-            UpdateClockPosition();
-            this.Controls.Add(timeLabel);
 
-            // 创建定时器
-            clockTimer = new System.Windows.Forms.Timer
-            {
-                Interval = 1000 // 1秒
-            };
-            clockTimer.Tick += ClockTimer_Tick;
-            clockTimer.Start();
-
-            // 窗体大小改变时更新位置
-            this.Resize += (s, e) => UpdateClockPosition();
-
-        }
-        private void ClockTimer_Tick(object sender, EventArgs e)
-        {
-            timeLabel.Text = DateTime.Now.ToString("HH:mm:ss");
-        }
-        private void UpdateClockPosition()
-        {
-            int margin = 10; // 边距
-            timeLabel.Location = new Point(
-                this.ClientSize.Width - timeLabel.Width - margin,
-                this.ClientSize.Height - timeLabel.Height - margin
-            );
-        }
 
         #region Windows Form Designer generated code
 
@@ -70,7 +34,6 @@ namespace Drawer
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,7 +58,6 @@ namespace Drawer
             this.toolStripButton6 = new System.Windows.Forms.ToolStripSplitButton();
             this.清除画布ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.clockTimer = new System.Windows.Forms.Timer(this.components);
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -315,8 +277,9 @@ namespace Drawer
             // 
             // trackBar1
             // 
+            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.trackBar1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.trackBar1.Location = new System.Drawing.Point(0, 802);
+            this.trackBar1.Location = new System.Drawing.Point(9, 804);
             this.trackBar1.Margin = new System.Windows.Forms.Padding(0);
             this.trackBar1.Maximum = 15;
             this.trackBar1.Minimum = 1;
@@ -331,10 +294,11 @@ namespace Drawer
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(41, 782);
+            this.label1.Location = new System.Drawing.Point(51, 784);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 7;
@@ -346,8 +310,8 @@ namespace Drawer
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1682, 853);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -390,7 +354,6 @@ namespace Drawer
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Timer clockTimer;
         private TrackBar trackBar1;
         private Label label1;
         private Label timeLabel;
